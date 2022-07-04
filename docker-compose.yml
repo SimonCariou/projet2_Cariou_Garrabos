@@ -1,0 +1,28 @@
+version: "3.9"
+volumes:
+  my_volume_for_project2:
+    external: true
+services:
+  api:
+    image: ml-api-sentiment-analysis:latest
+    container_name: my-api-sentiment-analysis
+    networks:
+      - my_network_for_project2
+    ports:
+      - target: 8000
+        published: 8000
+        protocol: tcp
+        mode: host
+  test:
+    image: ml-api-sentiments-analysis-tests:latest
+    container_name: my-api-sentiments-analysis-tests
+    networks:
+      - my_network_for_project2
+    environment:
+      LOG: "1"
+    volumes:
+      - my_volume_for_project2:/home/test
+    depends_on:
+      - "api"
+networks:
+  my_network_for_project2:
