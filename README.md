@@ -18,17 +18,21 @@ Ce qui permet à l'API de les retourner directement dans ce format.
 
 ## Implémentation de l'API
 
+L'API permet de retourner le sentiment associé à une phrase ainsi que d'accéder aux performances de 4 différents modèles de machine learning, choisis et entraînés sur le jeu de données de test.
+
+Les abréviations/acronymes suivants seront utilisés dans la définition des endpoints:
+- Logistic Regression (`log_reg`)
+- Decision Tree Classifier (`decision_tree`)
+- Multinomial Naive Bayes (`MNB`)
+- Stochastic Gradien Classifier (`SGD`) 
+
 ### Sentiment d'une phrase, calculé par les différents modèles
 
 GET: + paramètre: `{"sentence": "xxxx"}` qui retourne le sentiment de la phrase donnée en paramètre. Le sentiment peut être:
 * 0: Phrase à connotation négative
 * 1: Phrase à connotation positive. 
 
-Notre API propose 4 endpoints différents correspondant à l'évaluation du sentiment d'une phrase selon 4 modèles de machine learning:
-- Logistic Regression (`log_reg`)
-- Decision Tree Classifier (`decision_tree`)
-- Multinomial Naive Bayes (`MNB`)
-- Stochastic Gradien Classifier (`SGD`) 
+Notre API propose 4 endpoints différents correspondant à l'évaluation du sentiment d'une phrase selon les 4 modèles de machine learning choisis.
 
 Les différents endpoints permettent à l'utilisateur (authentifié) d'accéder aux ressources suivantes:
 ```
@@ -48,11 +52,7 @@ Chacun de ces endpoints retourne un JSON de la forme:
 
 ### Performances des différents modèles
 
-Notre API propose 4 endpoints différents permettant d'accéder aux métriques des 4 modèles utilisés pour l'entraînement sur le jeu de données de test:
-- Logistic Regression (`log_reg`)
-- Decision Tree Classifier (`decision_tree`)
-- Multinomial Naive Bayes (`MNB`)
-- Stochastic Gradien Classifier (`SGD`) 
+Notre API propose 4 endpoints différents permettant d'accéder aux métriques des 4 modèles utilisés pour l'entraînement sur le jeu de données de test.
 
 GET: Retourne: `accuracy_score`, `f1_score`, `recall_score` & `precision_score` pour le modèle/endpoint sélectionné.
 ```
