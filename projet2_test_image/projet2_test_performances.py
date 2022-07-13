@@ -1,7 +1,6 @@
 import os
 import requests
 
-
 #définition de l'adresse de l'API
 api_adress = 'my-api-sentiment-analysis'
 #port de l'API
