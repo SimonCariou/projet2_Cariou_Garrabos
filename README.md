@@ -24,6 +24,12 @@ GET: + paramètre: `{"sentence": "xxxx"}` qui retourne le sentiment de la phrase
 * 0: Phrase à connotation négative
 * 1: Phrase à connotation positive. 
 
+Notre API propose 4 endpoints différents correspondant à l'évaluation du sentiment d'une phrase selon 4 modèles de machine learning:
+- Logistic Regression (`log_reg`)
+- Decision Tree Classifier (`decision_tree`)
+- Multinomial Naive Bayes (`MNB`)
+- Stochastic Gradien Classifier (`SGD`) 
+
 Les différents endpoints permettent à l'utilisateur (authentifié) d'accéder aux ressources suivantes:
 ```
 /sentiment/log_reg
@@ -41,6 +47,12 @@ Chacun de ces endpoints retourne un JSON de la forme:
 ```
 
 ### Performances des différents modèles
+
+Notre API propose 4 endpoints différents permettant d'accéder aux métriques des 4 modèles utilisés pour l'entraînement sur le jeu de données de test:
+- Logistic Regression (`log_reg`)
+- Decision Tree Classifier (`decision_tree`)
+- Multinomial Naive Bayes (`MNB`)
+- Stochastic Gradien Classifier (`SGD`) 
 
 GET: Retourne: `accuracy_score`, `f1_score`, `recall_score` & `precision_score` pour le modèle/endpoint sélectionné.
 ```
