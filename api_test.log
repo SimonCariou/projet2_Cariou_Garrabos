@@ -1,0 +1,292 @@
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="alice"
+| password="wonderland"
+
+expected result = 200
+actual result = 200
+
+==> SUCCES
+
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="bob"
+| password="builder"
+
+expected result = 200
+actual result = 200
+
+==> SUCCES
+
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="clementine"
+| password="mandarine"
+
+expected result = 200
+actual result = 200
+
+==> SUCCES
+
+
+============================
+    Authentication test
+============================
+
+request done at "/permissions"
+| username="toto"
+| password="titi"
+
+expected result = 401
+actual result = 401
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/log_reg"
+| username="alice"
+| password="wonderland"
+| sentence='it is a beautiful day'
+
+expected result = 1
+actual result = 1
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/log_reg"
+| username="alice"
+| password="wonderland"
+| sentence='that sucks'
+
+expected result = 0
+actual result = 0
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/log_reg"
+| username="alice"
+| password="wonderland"
+| sentence=''
+
+expected result = 400
+actual result = 400
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/SGD"
+| username="alice"
+| password="wonderland"
+| sentence='life is beautiful'
+
+expected result = 1
+actual result = 1
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/rating/SGD"
+| username="alice"
+| password="wonderland"
+| sentence='that sucks'
+
+expected result = 0
+actual result = 0
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/SGD"
+| username="alice"
+| password="wonderland"
+| sentence=''
+
+expected result = 400
+actual result = 400
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/decision_tree"
+| username="alice"
+| password="wonderland"
+| sentence='life is beautiful'
+
+expected result = 1
+actual result = 1
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/decision_tree"
+| username="alice"
+| password="wonderland"
+| sentence='that sucks'
+
+expected result =0 0
+actual result = 0
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/decision_tree"
+| username="alice"
+| password="wonderland"
+| sentence=''
+
+expected result = 400
+actual result = 400
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/MNB"
+| username="alice"
+| password="wonderland"
+| sentence='life is beautiful'
+
+expected result = 1
+actual result = 1
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/MNB"
+| username="alice"
+| password="wonderland"
+| sentence='that sucks'
+
+expected result = 0
+actual result = 0
+
+==> SUCCES
+
+
+============================
+    Sentiment test
+============================
+
+request done at "/sentiment/MNB"
+| username="alice"
+| password="wonderland"
+| sentence=''
+
+expected result = 400
+actual result = 400
+
+==> SUCCES
+
+
+============================
+    Performances test
+============================
+
+request done at "/performances/log_reg"
+| username="alice"
+| password="wonderland"
+
+expected result > 0.8
+actual result = {'f1_score': 0.8667739782497742, 'accuracy_score': 0.875360870938595, 'recall_score': 0.8642427658774897, 'precision_score': 0.8693200611110236}
+
+==> SUCCES
+
+
+============================
+    Performances test
+============================
+
+request done at "/performances/SGD"
+| username="alice"
+| password="wonderland"
+
+expected result > 0.8
+actual result = {'f1_score': 0.8620498094783542, 'accuracy_score': 0.8704831446642523, 'recall_score': 0.862582988851309, 'precision_score': 0.861517288835369}
+
+==> SUCCES
+
+
+============================
+    Performances test
+============================
+
+request done at "/performances/decision_tree"
+| username="alice"
+| password="wonderland"
+
+expected result > 0.8
+actual result = {'f1_score': 0.8236300570841953, 'accuracy_score': 0.8334080173952648, 'recall_score': 0.829136915946386, 'precision_score': 0.8181958651379833}
+
+==> SUCCES
+
+
+============================
+    Performances test
+============================
+
+request done at "/performances/MNB"
+| username="alice"
+| password="wonderland"
+
+expected result > 0.8
+actual result = {'f1_score': 0.8389373863766644, 'accuracy_score': 0.8555193970425111, 'recall_score': 0.8020637604910434, 'precision_score': 0.8793648068669528}
+
+==> SUCCES
+
