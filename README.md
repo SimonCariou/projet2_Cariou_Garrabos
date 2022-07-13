@@ -62,7 +62,47 @@ Chacun de ces endpoints retourne un JSON de la forme:
 
 ## Implémentation des tests
 
+### Test de l’authentification des utilisateurs
+
+L’authentification de chaque utilisateur est testée, un test supplémentaire sur un utilisateur inconnu est également réalisé pour vérifier l’erreur retournée.
+Test des différents endpoints:
+
+#### Test des endpoints sentiment
+
+```
+/sentiment/log_reg
+/sentiment/decision_tree
+/sentiment/MNB
+/sentiment/SGD
+```
+
+Chaque endpoint “sentiment” est testé avec une phrase positive, une phrase négative et une phrase vide.
+
+#### Test des endpoints performances
+
+```
+/performances/log_reg
+/performances/decision_tree
+/performances/MNB
+/performances/SGD
+```
+Chaque endpoint “performance” est testé. Une vérification est réalisée sur le JSON reçu, chaque paramètre doit être supérieur à 0.8 pour valider le fonctionnement.
+
+
 ## Containerization de l'API et des Tests
+
+Les images de l’API et des tests sont insérées dans des containers lancés à l’aide de Docker Compose (`docker-compose.yml`):
+- Lancement de 2 containers:
+    - **API**:
+        - *image API*: ml-api-sentiment-analysis
+        - *container API*: my_api_sentiment_analysis
+    - **Tests**:
+        - *image test*: ml-api-sentiments-analysis-tests
+        - *container test*: my_api_sentiments_analysis_tests
+
+le container de test n’est lancé qu’une fois que celui de l’API est opérationnel.
+création du volume `my_volume_for_project2`: sauvegarde des résultats des tests.
+création du network `my_network_for_project2` et exposition du port `8000` pour l’API.
 
 ## Déploiement avec Kubernetes
 
