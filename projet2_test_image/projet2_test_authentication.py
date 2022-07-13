@@ -3,8 +3,6 @@ import requests
 from passlib.context import CryptContext
 import time
 
-time.sleep(10)
-
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 #définition de l'adresse de l'API
